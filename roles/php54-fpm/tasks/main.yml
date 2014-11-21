@@ -1,6 +1,6 @@
 ---
 - name: Install PHP-FPM 5.4 from base Centos repo
-  yum: name={{ item }} state=lastest
+  yum: name={{ item }} state=installed
   with_items:
    - php.x86_64
    - php-bcmath.x86_64
