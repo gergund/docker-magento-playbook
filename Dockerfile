@@ -13,3 +13,6 @@ RUN ansible-playbook magento_playbook.yml --connection=local
 
 EXPOSE 80 443
 
+CMD ["/usr/sbin/nginx"]
+CMD ["/usr/sbin/php-fpm","--daemonize"]
+
