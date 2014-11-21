@@ -1,0 +1,9 @@
+---
+- name: Install and run Nginx
+  yum: name=nginx state=latest
+
+- name: Configure Nginx
+  template: src=nginx.conf dest=/etc/nginx/nginx.conf
+
+- name: Configure Nginx for Magento
+  template: src=magento.conf dest=/etc/nginx/conf.d/magento.conf
