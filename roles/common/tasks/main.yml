@@ -1,0 +1,3 @@
+---
+- name: Install and run ntpd
+  yum: name=ntp state=latest

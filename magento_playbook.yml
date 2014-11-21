@@ -1,0 +1,5 @@
+---
+- name: Install Magento, Nginx, PHP-FPM, MySQL
+  hosts: 127.0.0.1
+  roles:
+     - common
