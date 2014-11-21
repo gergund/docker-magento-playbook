@@ -5,5 +5,8 @@
 - name: Configure Nginx
   template: src=nginx.conf dest=/etc/nginx/nginx.conf
 
+- name: Create Magento root
+  file: path={{magento_root}} state=directory
+
 - name: Configure Nginx for Magento
   template: src=magento.conf dest=/etc/nginx/conf.d/magento.conf

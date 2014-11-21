@@ -11,3 +11,5 @@ WORKDIR /provisioning/
 RUN git clone https://github.com/gergund/docker-magento-playbook.git .
 RUN ansible-playbook magento_playbook.yml --connection=local
 
+EXPOSE 80 443
+
