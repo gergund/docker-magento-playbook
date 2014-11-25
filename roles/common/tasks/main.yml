@@ -3,5 +3,5 @@
   yum: name=supervisor state=present
 
 - name: Configure supervisor
-  template: src=supervisor.conf dest=/etc/supervisor.conf
+  template: src=supervisord.conf dest=/etc/supervisord.conf
   
