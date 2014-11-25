@@ -1,3 +1,7 @@
 ---
-- name: Install and run ntpd
-  yum: name=ntp state=latest
+- name: Install supervisor
+  yum: name=supervisor state=present
+
+- name: Configure supervisor
+  template: src=supervisor.conf dest=/etc/supervisor.conf
+  
