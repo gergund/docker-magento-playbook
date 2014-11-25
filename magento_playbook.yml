@@ -5,3 +5,4 @@
      - common
      - nginx
      - php54-fpm
+     - percona-55

@@ -1,0 +1,33 @@
+---
+- template: src=percona.repo dest=/etc/yum.repos.d/percona.repo owner=root group=root mode=0644
+
+- template: src=my.cnf dest=/etc/my.cnf owner=root group=root mode=0644
+  
+- yum: enablerepo=percona pkg={{item}} state=installed
+  with_items:
+  - Percona-Server-client-55
+  - Percona-Server-server-55
+  - MySQL-python
+  - libselinux-python
+  
+- service: name=mysql enabled=yes state=started
+  ignore_errors: yes
+  
+- mysql_db: name={{db}} state=present
+
+- mysql_user: host={{item}} name={{mysql_user}} password={{mysql_passwd}} priv={{db}}.*:ALL
+  with_items:
+  - localhost
+  - 127.0.0.1
+  - ${ansible_fqdn}
+  ignore_errors: yes
+
+- mysql_user: host={{item}} name=root password={{mysql_root_passwd}}
+  with_items:
+  - ${ansible_fqdn}
+  - 127.0.0.1
+  - ::1
+  - localhost
+  ignore_errors: yes
+
+- template: src=.my.cnf dest=/root/.my.cnf owner=root group=root mode=0600

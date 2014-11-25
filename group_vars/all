@@ -1,2 +1,7 @@
 magento_domain: app.magento.loc
 magento_root: /var/www/magento
+
+mysql_root_passwd: 123123qa
+mysql_db_name: magento
+mysql_user: magento
+mysql_passwd: B1gPass0rd
