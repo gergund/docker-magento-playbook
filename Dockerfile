@@ -13,4 +13,11 @@ RUN ansible-playbook magento_playbook.yml --connection=local
 
 EXPOSE 80 443
 
+###
+Deploy magento code before running container
+###
+
+ADD ./magento-code ./magento-code
+ADD ./magento-sampledata ./magento-sampledata
+
 CMD ["/usr/bin/supervisord","-c","/etc/supervisord.conf"]
