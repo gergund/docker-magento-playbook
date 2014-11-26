@@ -1,0 +1,18 @@
+---
+- name: Import MySQL sampledata
+  mysql_db: name=magento-ee-1.13.0.2 state=import target=/var/www/magento/shared/madison-island-ee.sql
+
+- name: Import MySQL sampledata
+  mysql_db: name=magento-ee-1.14.0.0 state=import target=/var/www/magento/shared/madison-island-ee.sql
+
+- name: Import MySQL sampledata
+  mysql_db: name=magento-ee-1.14.1.0 state=import target=/var/www/magento/shared/madison-island-ee.sql
+
+#- name: Install Magento EE 1.13.0.2
+#  script: /usr/bin/php -f /var/www/magento/magento-ee-1.13.0.2/install.php -- 
+
+#- name: Install Magento EE 1.14.0.0
+#  script: /usr/bin/php -f /var/www/magento/magento-ee-1.14.0.0/install.php --
+
+#- name: Install Magento EE 1.14.1.0
+#  script: /usr/bin/php -f /var/www/magento/magento-ee-1.14.1.0/install.php --
