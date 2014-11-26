@@ -18,7 +18,7 @@ ADD magento-code.tar.gz /var/www/magento
 RUN mkdir /provisioning
 WORKDIR /provisioning/
 RUN git clone https://github.com/gergund/docker-magento-playbook.git .
-RUN ansible-playbook magento_playbook.yml --connection=local
+RUN ansible-playbook magento_playbook.yml --connection=local --skip-tags "configure_magento"
 
 EXPOSE 80 443
 
