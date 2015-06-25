@@ -16,6 +16,7 @@ RUN yum update -y
 
 RUN mkdir -p /var/www/magento
 ADD magento-code.tar.gz /var/www/magento
+ADD magetools.tar.gz /var/www/magento
 
 RUN mkdir /provisioning
 WORKDIR /provisioning/
