@@ -4,5 +4,5 @@
   roles:
      - common
      - nginx
-     - php54-fpm
-     - percona-55
+     - php56-fpm
+     - percona-56
