@@ -21,6 +21,7 @@ ADD magetools.tar.gz /var/www/magento
 RUN mkdir /provisioning
 WORKDIR /provisioning/
 RUN git clone https://github.com/gergund/docker-magento-playbook.git .
+RUN git checkout -b magento2 remotes/origin/magento2
 ADD _afterRun.sh _afterRun.sh
 RUN ansible-playbook magento_playbook.yml --connection=local
 

@@ -1,5 +1,8 @@
 ---
-- name: Install PHP-FPM 5.4 from base Centos repo
+- name: Prepare repo REMI PHP 5.6
+  command: yum install -y http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+
+- name: Install PHP-FPM 5.6 from base Centos repo
   yum: name={{ item }} state=installed
   with_items:
    - php.x86_64
