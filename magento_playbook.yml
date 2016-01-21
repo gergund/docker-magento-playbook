@@ -6,4 +6,3 @@
      - nginx
      - php54-fpm
      - percona-55
-#     - redis
