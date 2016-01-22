@@ -27,3 +27,6 @@
 - name: Configure PHP-FPM [www] pool
   template: src=www.conf dest=/etc/php-fpm.d/www.conf owner=root group=root mode=0644
 
+- name: Configure php.ini
+  template: src=php.ini dest=/etc/php.ini owner=root group=root mode=0644
+
