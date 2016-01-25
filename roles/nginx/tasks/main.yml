@@ -19,3 +19,6 @@
 
 - name: Configure Nginx for Magento
   template: src=magento.conf dest=/etc/nginx/conf.d/magento.conf
+
+- name: Configure Nginx for Magento 2
+  template: src=nginx.conf.sample dest=/etc/nginx/conf.d/nginx.conf.sample
